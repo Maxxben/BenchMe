@@ -12,16 +12,25 @@ Les alogorithmes de tri :
 
 <p align="center">
 <img src="images/Tri_bulle.png"  alt="drawing" width="500"/>
-<br><br>
+</p>
+
+<p align="center">
 <img src="images/tri_selection.png"  alt="drawing" width="500"/>
-<br><br>
+</p>
+
+<p align="center">
 <img src="images/tri_insertion.png"  alt="drawing" width="500"/>
-<br><br>
+</p>
+
+<p align="center">
 <img src="images/tri_tas.png"  alt="drawing" width="500"/>
-<br><br>
+</p>
+
+<p align="center">
 <img src="images/tri_tas2.png"  alt="drawing" width="300"/>
 <img src="images/tri_tas3.png"  alt="drawing" width="300"/>
 </p>
+
 <p align="center">
         source : Cours tri
 </p>
