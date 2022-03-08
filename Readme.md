@@ -2,13 +2,11 @@
 
 # Enoncé
 
-Le programme fait l'etude de 4 algorithmes de tri :
+Le programme fait l'etude de 4 algorithmes de tri (ici, des tableau de nombres aleatoires) grace au language c.
 
-        Selection,   Insertion,    Bulle,   Tas
+On pourra alors determiner lequel est le plus performant.
 
-On pourra determiner lequel est le plus performant.
-
-Les alogorithmes de tri :
+## Les alogorithmes de tri :
 
 <p align="center">
 <img src="images/Tri_bulle.png"  alt="drawing" width="500"/>
