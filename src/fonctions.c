@@ -1,7 +1,3 @@
-//
-// Created by 
-//
-
 /**
 * La fonction Tri_bulle permet de trier un tableau de nombres floats de taille variables
 * à l'aide de l'algorithme de tri par bulle
@@ -10,7 +6,7 @@
 * @since  
 */
 
-void Tri_bulle(float tab[], int size){
+void tri_bulle(float tab[], int size){
     float tmp;
     int i,j,changeA=0, changeB=0;
 
@@ -31,7 +27,7 @@ void Tri_bulle(float tab[], int size){
     }
 }
 
-void Tri_insertion(float t[],int taille) {
+void tri_insertion(float t[],int taille) {
 
     int i, j;
     float tmp;
@@ -46,7 +42,7 @@ void Tri_insertion(float t[],int taille) {
     }
 }
 
-void Tri_selection(float tab[], int size){
+void tri_selection(float tab[], int size){
 
     int i,j, index;
     float swap;
@@ -67,7 +63,7 @@ void Tri_selection(float tab[], int size){
     }
 }
 
-void Sur_le_tas(float t[], int n, int i) {
+void sur_le_tas(float t[], int n, int i) {
     int max = i;
     int gauche = 2 * i + 1;
     int droite = 2 * i + 2;
@@ -85,21 +81,21 @@ void Sur_le_tas(float t[], int n, int i) {
         float b = t[max];
         t[max]=a;
         t[i]=b;
-        Sur_le_tas(t, n, max);
+        sur_le_tas(t, n, max);
     }
 }
 
 
-void Tri_tas(float t[], int taille) {
+void tri_tas(float t[], int taille) {
     
     for (int i = taille / 2 - 1; i >= 0; i--)
-        Sur_le_tas(t, taille, i);
+        sur_le_tas(t, taille, i);
 
     for (int i = taille - 1; i >= 0; i--) {
         float a = t[0];
         float b = t[i];
         t[i] = a;
         t[0] = b;
-        Sur_le_tas(t, i, 0);
+        sur_le_tas(t, i, 0);
     }
 }

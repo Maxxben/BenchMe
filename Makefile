@@ -1,17 +1,20 @@
-CXX = g++
+CXX = gcc
 
 SRC = ./src/*.c
 OBJ = $(SRC:.cc=.o)
-EXEC = Benchme
+EXEC = ./exec/Benchme
 
-all: $(EXEC)
+all:
+	@$(CXX) $(OBJ) $(CFLAGS) $(LFLAGS) -o $(EXEC) -lm
+	@echo "-- Generation des executables --"
 
-$(EXEC): $(OBJ)
-	$(CXX) $(LDFLAGS) -o $@ $(OBJ) $(LBLIBS)
-
+.PHONY: clean
 clean:
-	rm -rf $(OBJ) $(EXEC)
+	@rm -rf $(EXEC)
+	@echo "-- Suppression des executables --"
 
-.PHONY: documentation
-documentation:
+.PHONY: doc
+doc:
 	doxygen
+	@echo "-- Generation de la documentation Doxygen --"
+

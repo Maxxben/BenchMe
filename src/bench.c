@@ -1,7 +1,3 @@
-/*
-    coucou
-*/
-
 #include <stdio.h>
 #include <time.h>
 #include <string.h>
@@ -10,8 +6,7 @@
 #include <stdlib.h>
 #include "fonctions.h"
 
-float *getTab(int size, int graine)
-{
+float *getTab(int size, int graine){
     float *tab = (float*) malloc(sizeof(float) * size);
     srand(graine);
     for (int i=0; i < size; i++)
@@ -45,7 +40,7 @@ double temps(clock_t t1, clock_t t2){
     return time;
 }
 
-void Traitement(char *filename){
+void traitement(char *filename){
 
     int i,j,m=1;
 
@@ -61,25 +56,25 @@ void Traitement(char *filename){
             float *t = getTab(size, i+1);
 
             clock_t ts_debut = clock();
-            Tri_selection(t, size);
+            tri_selection(t, size);
             clock_t ts_fin = clock();
             double temps_ts = temps(ts_debut,ts_fin);
             moy_ts += temps_ts;
 
             clock_t ti_debut = clock();
-            Tri_insertion(t, size);
+            tri_insertion(t, size);
             clock_t ti_fin = clock();
             double temps_ti = temps(ti_debut,ti_fin);
             moy_ti += temps_ti;
          
             clock_t tb_debut = clock();
-            Tri_bulle(t, size);
+            tri_bulle(t, size);
             clock_t tb_fin = clock();
             double temps_tb = temps(tb_debut,tb_fin);
             moy_tb += temps_tb;
 
             clock_t tt_debut = clock();
-            Tri_tas(t, size);
+            tri_tas(t, size);
             clock_t tt_fin = clock();
             double temps_tt = temps(tt_debut,tt_fin);
             moy_tt += temps_tt;
@@ -101,7 +96,8 @@ void Traitement(char *filename){
         writeChar(filename, "Tri_tas;");
         writeValueTab(filename, moy_tt/3);
 
-    }    
+    }
+    
 }
 
 
