@@ -16,6 +16,23 @@ float *getTab(int size, int graine){
     return tab;
 }
 
+void writeChar(char *fichier, char *caract){
+    FILE *fp = fopen(fichier, "a");
+    fprintf(fp, "%s", caract);
+    fclose(fp);
+}
+
+void writeCharEcrase(char *fichier, char *caract){
+    FILE *fp = fopen(fichier, "w");
+    fprintf(fp, "%s\n", caract);
+    fclose(fp);
+}
+
+void writeCharEntete(char *fichier, char *caract){
+    FILE *fp = fopen(fichier, "a");
+    fprintf(fp, "%s\n", caract);
+    fclose(fp);
+}
 void writeValueTab(char *fichier, double unChiffre){
     FILE *fp = fopen(fichier, "a");
     fprintf(fp, "%.8f\n", unChiffre);
@@ -28,9 +45,9 @@ void writeValue(char *fichier, double unChiffre){
     fclose(fp);
 }
 
-void writeChar(char *fichier, char *caract){
+void writeValueEntete(char *fichier, double unChiffre){
     FILE *fp = fopen(fichier, "a");
-    fprintf(fp, "%s", caract);
+    fprintf(fp, "%.0f", unChiffre);
     fclose(fp);
 }
 
@@ -43,6 +60,8 @@ double temps(clock_t t1, clock_t t2){
 void traitement(char *filename){
 
     int i,j,m=1;
+
+    writeCharEcrase(filename, "** Resultats Benchme algorithmes de tri **");
 
     for (int k = 2; k < 6; k++) {
         int size = pow(10, k);
@@ -79,10 +98,13 @@ void traitement(char *filename){
             double temps_tt = temps(tt_debut,tt_fin);
             moy_tt += temps_tt;
 
-
         }
 
-        writeValue(filename, size);
+        printf("* Traitement pour %f valeurs - ecrit dans le fichier *", size);
+
+        writeChar(filename, "\nPour ");
+        writeValueEntete(filename, size);
+        writeCharEntete(filename, " valeurs;");
 
         writeChar(filename, "Tri_selection;");
         writeValueTab(filename, moy_ts/3);
@@ -99,5 +121,7 @@ void traitement(char *filename){
     }
     
 }
+
+
 
 
